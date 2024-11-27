@@ -19,6 +19,9 @@ const BasicForm = () => {
         onSubmit,
 
     });
+    const  handlePaste =  (event)=>{
+        event.preventDefault();
+    }
 
     return (
         <div className="basic-form">
@@ -72,10 +75,10 @@ const BasicForm = () => {
                     value={values.confirmPassword}
                     onChange={handleChange}
                     onBlur={handleBlur}
+                    onPaste={handlePaste}
                     className={errors.confirmPassword && touched.confirmPassword ? 'input-error' : ""}
                 />
                 {errors.confirmPassword && touched.confirmPassword && <p className='error'>{errors.confirmPassword}</p>}
-
 
                 <button disabled={isSubmitting} type="submit">Submit</button>
             </form>
